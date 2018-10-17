@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataBaseTools.Common;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,13 @@ namespace DataBaseTools.UI
         public MainWindow()
         {
             InitializeComponent();
+
+            Init();
+        }
+
+        public void Init()
+        {
+            this.Title = ResourceManager.GetResourseString("MainPageTitle");
         }
     }
 }
