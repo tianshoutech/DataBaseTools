@@ -63,17 +63,24 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Languages\lang.Designer.cs">
+    <Compile Include="Languages\lang.zh-CN.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>lang.resx</DependentUpon>
+      <DependentUpon>lang.zh-CN.resx</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Pages\ChangDBPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Pages\ChangDBPage.xaml.cs">
+      <DependentUpon>ChangDBPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -88,9 +95,9 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <EmbeddedResource Include="Languages\lang.en-US.resx" />
-    <EmbeddedResource Include="Languages\lang.resx">
+    <EmbeddedResource Include="Languages\lang.zh-CN.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>lang.Designer.cs</LastGenOutput>
+      <LastGenOutput>lang.zh-CN.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -108,6 +115,10 @@
     <ProjectReference Include="..\DataBaseTools.Common\DataBaseTools.Common.csproj">
       <Project>{2EC42CC2-E91E-4E2F-9071-A2F91673DE09}</Project>
       <Name>DataBaseTools.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataBaseTools.Model\DataBaseTools.Model.csproj">
+      <Project>{F5342815-5C49-4F1A-96F6-8118422995F9}</Project>
+      <Name>DataBaseTools.Model</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

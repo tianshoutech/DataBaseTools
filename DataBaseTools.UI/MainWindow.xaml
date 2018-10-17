@@ -7,22 +7,18 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Menu HorizontalAlignment="Left" Height="30" Margin="0,0,0,0" VerticalAlignment="Top">
-            <MenuItem Header="配置" Height="30">
-                <MenuItem Header="_New..."  IsCheckable="True"/>
-                <MenuItem Header="_Open..." InputGestureText="ctrl+o" />
+        <Menu HorizontalAlignment="Left" Height="24" Margin="0,0,0,0" VerticalAlignment="Top">
+            <MenuItem x:Name="fileMenu" Header="文件" Height="24" >
+                <MenuItem Header="打开文件"  IsCheckable="True" InputGestureText="ctrl+o"/>
                 <Separator />
-                <MenuItem Header="Sen_d To">
-                    <MenuItem Header="Mail Recipient" />
-                    <MenuItem Header="My Documents" />
+                <MenuItem Header="历史记录">
+                    <MenuItem Header="文件1" />
+                    <MenuItem Header="文件2" />
                 </MenuItem>
             </MenuItem>
-            <MenuItem Header="_Edit">
-            </MenuItem>
-            <MenuItem Header="_View">
+            <MenuItem Header="数据库">
+                <MenuItem x:Name="changeDBMenu" Header="切换数据库" Click="changeDBMenu_Click"></MenuItem>
             </MenuItem>
         </Menu>
-
-
     </Grid>
 </Window>

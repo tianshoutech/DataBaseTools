@@ -1,4 +1,6 @@
 ﻿using DataBaseTools.Common;
+using DataBaseTools.Model;
+using DataBaseTools.UI.Pages;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,7 +32,28 @@ namespace DataBaseTools.UI
 
         public void Init()
         {
-            this.Title = ResourceManager.GetResourseString("MainPageTitle");
+            // TODO:此处应该放置在应用的初始化代码中
+            ResourceManager.SetDefaultResource("DataBaseTools.UI.Languages.lang", "DataBaseTools.UI");
+
+            this.Title = ResourceManager.GetResourse("MainPageTitle");
+        }
+
+        /// <summary>
+        /// 切换数据库
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void changeDBMenu_Click(object sender, RoutedEventArgs e)
+        {
+            var changDBPage = new ChangDBPage();
+            changDBPage.SqlTypeListCbox.ItemsSource = CommonConst.SqlTypeList;
+            changDBPage.SqlTypeListCbox.DisplayMemberPath = "SqlName";
+            changDBPage.SqlTypeListCbox.SelectedValuePath = "Id";
+            if (CommonConst.SqlTypeList.Count > 0)
+            {
+                changDBPage.SqlTypeListCbox.SelectedIndex = 0;
+            }
+            changDBPage.ShowDialog();
         }
     }
 }
