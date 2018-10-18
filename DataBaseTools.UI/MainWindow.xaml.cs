@@ -1,8 +1,10 @@
 ﻿using DataBaseTools.Common;
+using DataBaseTools.Common.Model;
 using DataBaseTools.Model;
 using DataBaseTools.UI.Pages;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -58,7 +60,24 @@ namespace DataBaseTools.UI
 
         private void testRedisBtn_Click(object sender, RoutedEventArgs e)
         {
-            var keys = RedisManager.GetAllKeys().ToList();
+            //var keys = RedisManager.GetAllKeys().ToList();
+            //var infos = RedisManager.GetInfo();
+            var list = new List<RedisStringModel>();
+            for (int i = 0; i < 1000000; i++)
+            {
+                list.Add(new RedisStringModel()
+                {
+                    key = "name"+i,
+                    Value = "name" + i,
+                    ExpiredTime = 100000
+                });
+            }
+
+            Stopwatch sw = new Stopwatch();
+            sw.Start();
+            RedisManager.MSetValue(list);
+            sw.Stop();
+            MessageBox.Show((sw.ElapsedMilliseconds / 1000).ToString());
         }
     }
 }

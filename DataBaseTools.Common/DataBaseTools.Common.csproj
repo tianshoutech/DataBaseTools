@@ -92,13 +92,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ISqlManager.cs" />
+    <Compile Include="Model\RedisInfo.cs" />
     <Compile Include="MysqlManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RedisManager.cs" />
     <Compile Include="ResourceManager.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
