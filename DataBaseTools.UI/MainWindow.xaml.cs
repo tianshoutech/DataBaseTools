@@ -55,5 +55,10 @@ namespace DataBaseTools.UI
             }
             changDBPage.ShowDialog();
         }
+
+        private void testRedisBtn_Click(object sender, RoutedEventArgs e)
+        {
+            var keys = RedisManager.GetAllKeys().ToList();
+        }
     }
 }

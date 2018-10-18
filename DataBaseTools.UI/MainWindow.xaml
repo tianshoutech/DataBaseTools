@@ -20,5 +20,6 @@
                 <MenuItem x:Name="changeDBMenu" Header="切换数据库" Click="changeDBMenu_Click"></MenuItem>
             </MenuItem>
         </Menu>
+        <Button x:Name="testRedisBtn" Click="testRedisBtn_Click">测试Redis</Button>
     </Grid>
 </Window>
